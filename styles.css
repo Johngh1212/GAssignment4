@@ -1,0 +1,42 @@
+
+/* Apply styles to the <body> element */
+body {
+    margin: 8px;
+    display: block;
+    background-color: black; /* Black background for the matrix effect */
+    color: white; /* White color */
+    font-family: 'Courier New', monospace; /* Monospace font for the matrix effect */
+}
+
+/* Add styles to the heading of mainHeading ID */
+#mainHeading {
+    font-size: 24px;
+    color: red; /* Red color for the main heading */
+    /* text-decoration: underline; */
+}
+
+/* add styles to the paragraph with id "testP" and class "funParagraph" */
+#testP.funParagraph {
+    font-size: 16px;
+    color: green; /* Green color for the fun paragraph */
+    margin-bottom: 10px;
+}
+
+.bar-chart {
+    background-image: https://www.5yearcharts.com/wp-content/uploads/2016/04/snp500-10y.png('bar_chart.png'); /* Path to your bar chart image */
+    width: 100px; /* width */
+    height: 80px; /* height */
+    background-size: cover; /* Scale image*/
+}
+
+/* Create the matrix-like background using company names */
+.matrix-cell-Microsoft::before,
+.matrix-cell-Apple::before,
+.matrix-cell-Amazon::before {
+    content: attr(data-company); /* Use data attribute for company names */
+    position: absolute; /* Position independently */
+    top: -100px; /* Start animation from 100px above the top */
+    animation: fall 5s linear infinite; /* Animation duration and timing */
+}
+
+/* Keyframes for falling animation */
